@@ -26,90 +26,36 @@
 
 # Instructions on how to set up and run the model training script
 
-The process of model training and evaluation involves selecting appropriate machine learning algorithms, training them on the dataset, and assessing their performance using various metrics. This project utilizes two models: Linear Regression and Random Forest Regressor. Here's a detailed explanation of the steps involved:
+To set up and run the Flask API you’ve created locally, follow these steps:
 
-## 1. Linear Regression Model
-Feature Scaling: Before training, the features are standardized using StandardScaler. This involves rescaling the features so that they have a mean of zero and a standard deviation of one. Standardization is crucial for algorithms like Linear Regression, which are sensitive to the scale of the data.
+## 1. Install Python and Pip
+Verify Python Installation: Ensure Python is installed by checking the version with python --version or python3 --version in your terminal or command prompt.
+Install Pip: Pip is usually included with Python. Verify by running pip --version. If not installed, download and install it from the Python website.
 
-Model Training: The Linear Regression model is trained on the scaled training data (X_train_s). The model learns the relationships between the features and the target variable (median_house_value) by minimizing the residual sum of squares between the observed targets and the predicted targets.
+## 2. Install Flask and Dependencies
+Open Terminal/Command Prompt: Access your command line interface.
+Install Flask and Numpy: Run the command pip install Flask numpy to install Flask and NumPy. Ensure these libraries are installed to support your Flask application.
 
-Predictions and Evaluation: The trained model is used to make predictions on the scaled test data (X_test_s). 
+## 3. Save Your Flask Application
+Create a Python File: Open a text editor or Integrated Development Environment (IDE).
+Paste the Code: Copy the provided Flask code into a new file and save it as app.py (or another name of your choice).
 
-The performance of the model is evaluated using metrics such as:
-Mean Squared Error (MSE): Measures the average of the squares of the errors, providing a sense of how far off predictions are from actual values.
-R2 Score: Indicates the proportion of the variance in the dependent variable that is predictable from the independent variables. A higher R2 score signifies a better fit.
-Visualization: The actual vs. predicted values are visualized using scatter plots, allowing for a visual assessment of the model's performance. A diagonal line representing perfect prediction is included for reference.
-## 2. Random Forest Regressor
-Model Training: The Random Forest Regressor is trained on the same standardized features. This ensemble learning method combines multiple decision trees, each trained on a random subset of the data, to improve prediction accuracy and control overfitting.
+## 4. Save Your Model
+Ensure Model File Exists: Place your model.pkl file in the same directory as app.py. This file is necessary for loading the model in your Flask application.
 
-Predictions and Evaluation: The model's predictions on the test set are evaluated similarly to the Linear Regression model. The same metrics (MSE and R2 Score) are used to assess its performance.
+## 5. Run the Flask Application
+Navigate to the Project Directory: Use cd to change to the directory where app.py is located.
+Start the Flask Server: Run python app.py or python3 app.py in the terminal. This command starts the Flask development server and makes your API accessible locally.
 
-Visualization: Like the Linear Regression model, the actual vs. predicted values are plotted to visualize the model's accuracy.
-## 3. Model Comparison
-The performance of the Linear Regression and Random Forest Regressor models is compared using their evaluation metrics. This comparison helps determine which 
-model is more accurate and reliable for predicting housing prices.
+## 6. Test the API
+Access the API: Open a web browser or use an API testing tool like Postman to interact with your API.
 
-Evaluation Metrics:
-Train Accuracy: The accuracy of the model on the training dataset.
-Test Accuracy: The accuracy of the model on the testing dataset.
-Mean Squared Error (MSE): Lower values indicate better accuracy.
-R2 Score: A higher score closer to 1 indicates a better fit.
+Health Check: Visit http://127.0.0.1:8000/health to check if the server is running.
+Prediction Endpoint: Use Postman or curl to make POST requests to http://127.0.0.1:8000/predict with JSON data containing the features key.
+Model Info: Access http://127.0.0.1:8000/model-info to view model information.
 
-The Random Forest Regressor generally outperforms the Linear Regression model in this project, as indicated by its higher R2 score and lower MSE. The final chosen model, in this case, Random Forest, is saved for future use, indicating that it has been deemed the more accurate and robust model for predicting California housing prices.
-
-
-# Instructions on how to set up and run API locally
-
-## 1. Install Required Packages
-Objective: Ensure that you have all the necessary software libraries installed to run the Flask application.
-
-Steps:
-
-Check Python Installation: Verify that Python is installed on your system. You can do this by opening a terminal or command prompt and typing python --version. If Python is not installed, download and install it from the official Python website.
-
-Install Flask: Flask is a lightweight web framework used to build web applications. You need Flask to create and run the web server for your application.
-
-Install NumPy: NumPy is a library for numerical operations in Python. It is used to handle and manipulate arrays, which are essential for processing features and making predictions.
-
-Ensure Pickle is Available: Pickle is part of Python's standard library, so you don't need to install it separately. It's used for serializing and deserializing Python objects, which is necessary for loading the trained machine learning model.
-
-Use a Package Manager: Use a package manager like pip to install Flask and NumPy. You can do this by running the appropriate commands in your terminal or command prompt.
-
-## 2. Save Your Model
-Objective: Ensure that your trained machine learning model is correctly saved and accessible for your Flask application.
-
-Steps:
-
-Train and Save the Model: You should have already trained a machine learning model using a library like Scikit-Learn, TensorFlow, or PyTorch. Once trained, save the model to a file using serialization methods such as pickle.
-
-File Naming and Location: Save the serialized model file with a clear name (e.g., model.pkl). Ensure this file is placed in the same directory as your Flask application code, or adjust the file path in your code to match its location.
-
-Verify Model File: Confirm that the model file exists and is not corrupted. You can check this by attempting to load the file in a Python script or interactive session.
-
-## 3. Create the Flask Application
-Objective: Set up the Flask application by creating and configuring the necessary Python file.
-
-Steps:
-
-Create a New Python File: Open your preferred text editor or Integrated Development Environment (IDE). Create a new file named app.py or another name of your choice.
-
-Paste Application Code: Copy the provided Flask application code into this file. This code defines the routes and logic for your web server, including endpoints for health checks, predictions, and model information.
-
-Understand the Structure: Familiarize yourself with the structure of the Flask application. This includes understanding how the routes are defined, how the model is loaded, and how predictions are made based on incoming requests.
-
-Save the File: Save the file in the directory where you intend to run your Flask server.
-
-## 4. Run the Flask Application
-Objective: Start the Flask development server to make the application accessible and operational.
-
-Steps:
-
-Open Terminal or Command Prompt: Access your command line interface, which is where you will run the Flask server.
-
-Navigate to the Project Directory: Change the directory to where your app.py file is located. Use commands like cd (change directory) to navigate.
-
-Start the Flask Server: Execute the command to run the Flask application. This will start the development server and make your application available at a local URL.
-
-Verify Server Start: Check the terminal or command prompt output for messages indicating that the Flask server is running. Typically, you will see a message with the URL where the server is accessible, such as http://127.0.0.1:8000.
-
-By following these detailed steps, you'll be able to set up, configure, and run your Flask application, ensuring that all components are correctly installed and operational.
+## 7. Handle Errors
+Check for Errors: If you encounter errors, check the terminal output where the Flask server is running. The error messages can help identify issues with code execution or missing files.
+## 8. Stop the Flask Server
+Terminate Server: To stop the server, return to the terminal where Flask is running and press Ctrl + C.
+By following these steps, you'll be able to set up, run, and test your Flask API locally.
