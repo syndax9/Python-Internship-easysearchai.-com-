@@ -1,5 +1,5 @@
 # Python-Internship-easysearchai.-com-
-Project Overview
+# Project Overview
 1. Introduction
   This project aims to predict California housing prices using features like median income, total rooms, total bedrooms, population, households, and ocean proximity.   It involves data loading, cleaning, exploratory data analysis (EDA), feature engineering, and model training with different algorithms.
 
