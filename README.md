@@ -26,6 +26,31 @@
 
 # Instructions on how to set up and run the model training script
 
+## 1. Prepare Your Environment
+Ensure Python is Installed: Verify the Python version with python --version or python3 --version. Install Python if needed.
+Install Required Libraries: Install necessary libraries such as numpy and pickle. Run pip install numpy if they are not already installed.
+## 2. Load the Saved Model
+Place the Model File: Ensure the model.pkl file is in the directory from where you will be running your application.
+Load the Model: Use Python to load the model using pickle. This step involves writing a script that loads the model file into memory.
+## 3. Prepare the Input Data
+Format the Data: Ensure the input data matches the format expected by the model. This typically involves preparing a list or array of feature values.
+Data Preprocessing: Apply any necessary preprocessing steps (e.g., scaling, normalization) to the input data as done during the model training.
+## 4. Make Predictions
+Predict Using the Model: Use the loaded model to make predictions on your input data. Pass the preprocessed features to the model’s predict method.
+## 5. Integrate with Other Applications
+Develop Integration Code: Write code in your application to use the model for making predictions. This involves:
+Loading the model (using the pickle module).
+Preprocessing input data.
+Passing the data to the model.
+Handling and using the model's predictions.
+## 6. Test Predictions
+Run Predictions: Test your application with various input data to ensure that the model provides accurate predictions and integrates well with your application.
+## 7. Error Handling
+Handle Errors: Implement error handling for issues such as file not found, corrupted model files, or incorrect input data formats. This ensures your application can manage exceptions gracefully.
+
+
+# Instructions on how to set up and run the API Locally 
+
 To set up and run the Flask API you’ve created locally, follow these steps:
 
 ## 1. Install Python and Pip
