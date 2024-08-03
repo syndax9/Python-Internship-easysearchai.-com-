@@ -107,30 +107,33 @@ The model is loaded from a file named model.pkl using pickle.
 Error handling is included to manage:
 FileNotFoundError: Raised if the model file does not exist.
 pickle.UnpicklingError: Raised if there is an issue loading the model.
+
 Endpoints
 
-/health
-
+### /health
 Method: GET
 Description: Provides a health check endpoint to verify if the API is up and running.
 Response: Returns a JSON object with a message indicating the API status, with a status code of 200.
-/predict
 
+### /predict
 Method: POST
 Description: Accepts JSON input for making predictions using the loaded model.
+
 Request:
 Content-Type: Application/json
 Payload: Must include a features key with a list of numerical values (integers or floats).
+
 Validation:
 Ensures the request is in JSON format.
 Checks if the features key is present and if its value is a list of numbers.
+
 Error Handling:
 Returns an error if the request is not in JSON format, the features key is missing, or if the value is not a list of numbers.
 Handles ValueError and TypeError specifically, returning appropriate error messages.
 Catches and handles any other exceptions, returning a generic error message with a status code of 500.
 Response: Returns a JSON object with the prediction result or an error message.
-/model-info
 
+### /model-info
 Method: GET
 Description: Provides information about the model's performance and characteristics.
 Response: Returns a JSON object with details including:
