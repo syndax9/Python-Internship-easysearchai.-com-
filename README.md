@@ -27,7 +27,7 @@
 ## 8. Model Comparison
   Compare both models based on train and test accuracy, MSE, and R2 Score using scatter plots and bar graphs to evaluate effectiveness.
 
-# Instructions on how to set up and run both the model training script
+# Instructions on how to set up and run the model training script
 
 The process of model training and evaluation involves selecting appropriate machine learning algorithms, training them on the dataset, and assessing their performance using various metrics. This project utilizes two models: Linear Regression and Random Forest Regressor. Here's a detailed explanation of the steps involved:
 
