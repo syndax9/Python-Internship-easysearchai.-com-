@@ -152,3 +152,19 @@ Running the Application
 Command: app.run(debug=True, port=8000)
 Description: Starts the Flask application in debug mode on port 8000.
 This documentation outlines the structure, functionality, and error handling mechanisms of the Flask application, providing a comprehensive guide for understanding and using the API.
+
+### Example Postman collection for testing the API
+
+For API status: http://127.0.0.1:8000/health
+
+For prediction: http://127.0.0.1:5000/predict
+
+Example
+json input:
+{
+  "features" : [1.00895849, -0.81719509, -0.28350497,  0.50138838,  0.0471463 , 0.29577485,  0.20170303,  0.9585843 , -0.88880219,  1.45563404, -0.01564507, -0.35155493, -0.38278521, -0.85343965,  0.31153227]
+}
+
+output: 188385.02
+
+For Model Information: http://127.0.0.1:5000/model-info
